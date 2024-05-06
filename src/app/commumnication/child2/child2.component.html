@@ -1,0 +1,33 @@
+<div class="cotainer-fluid w-50 mt-5 ms-5 border border-1 p-3">
+<h5>Create a new Employee</h5>
+    <form  onsubmit="return false;">
+        <div>
+            <label for="code" class="form-label">Employee Id</label>
+            <input type="text" class="form-control" name="code" placeholder="Employee Id" [(ngModel)]="code">
+        </div>
+        <div class="mt-1">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Employee Name" [(ngModel)]="name">
+        </div>
+        <div class="mt-1">
+            <label for="gender" class="form-label">Gender</label>
+            <select [(ngModel)]="gender" name="gender" class="form-select">
+                <option>Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+        <div class="mt-1">
+            <label for="annualSalary" class="form-label">Annual Salary</label>
+            <input type="text" name="annualSalary" class="form-control" placeholder="Employee Salary" [(ngModel)]="annualSalary">
+            
+        </div>
+        <div class="mt-1">
+            <label for="dateOfBirth" class="form-label">Date Of Birth</label>
+            <input type="date" name="dateOfBirth" class="form-control" [(ngModel)]="dateOfBirth">
+        </div>
+        <div>
+            <button class="btn btn-warning mt-3 " (click)="createNewEmployee()">Add<span class="ms-1 bi bi-plus-circle"></span></button>
+        </div>
+    </form>
+</div>

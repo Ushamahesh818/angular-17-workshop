@@ -1,0 +1,15 @@
+.bi-toggle2-off{
+    font-size:30px;
+}
+.theme{
+  height:100vh;
+}
+
+.ordinal{
+  width:60px;
+  height:25px;
+}
+
+.ordinal:focus{
+  background-color: lightblue;
+}

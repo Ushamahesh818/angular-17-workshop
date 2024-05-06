@@ -1,0 +1,25 @@
+<div class="container-fluid">
+<div class="table-responsive m-4">
+        <h4>Employee Details</h4>
+        <table class="table table-hover table-striped table-bordered caption-top mt-4">
+            <tr class="bg-warning text-center">
+                <th>Code</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Salary</th>
+                <th>Date of Birth</th>
+                <th>Action</th>
+            </tr>
+            <tbody>
+                <tr *ngFor="let employee of empArray" class="text-center">
+                    <td>{{employee.code}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.gender}}</td>
+                    <td>{{employee.annualSalary }}</td>
+                    <td>{{employee.dateOfBirth}}</td>
+                    <td><button class="btn btn-danger bi bi-trash3" (click)="deleteEmployee(employee)"><span class="ms-1">Delete</span></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

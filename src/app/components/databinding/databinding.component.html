@@ -1,0 +1,47 @@
+<div class="w-75 mx-auto border border-1 p-5 mt-5 bg-light rounded rounded-4 box-shadow" >
+    <div class="row row-gap-5">
+        <div class="col column-gap-5 ms-3">
+            <img src="../../../assets/images/google-icon.png" width="60px" height="60px" class="mb-5">
+            <div><span class="h2 mt-5">Hi Usha</span></div>
+            <select class="rounded rounded-pill  mt-3 p-1 ">
+                <option>ushamahesh818&#64;gmail.com</option>
+            </select>
+        </div>
+        <div class="col">
+            <form class="mt-5">
+                <input type="{{inputType}}" class="form-control w-100 mt-3 mb-3" placeholder="Enter your password"
+                    name="password" [(ngModel)]="password">
+
+                <div>
+                    <input type="checkbox" (click)="showORHidePassword()"
+                        class="form-check-input me-4"><span>{{passwordText}}</span>
+                </div>
+                <div class="mt-5 float-end">
+                    <a href="#" class="me-5">Forgot password?</a><button
+                        class="btn btn-primary m rounded rounded-pill ">Next</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <textarea maxlength="100" [(ngModel)]="msg">
+
+    </textarea>
+    <div>Typed Characters:{{100-msg.length}}</div>
+
+    <h2>Choose a state</h2>
+    <select [(ngModel)]="state">
+        <option >Karnataka</option>
+        <option>Kerala</option>
+    </select>
+
+    Selected state is:{{state}}
+</div>
+<hr>
+<input type="number" placeholder="Enter number 1" [(ngModel)]="num1">
+<input type="number" placeholder="Enter number 2" [(ngModel)]="num2"><br>
+Sum of {{num1}}+{{num2}}:{{num1+num2}}
+<hr>

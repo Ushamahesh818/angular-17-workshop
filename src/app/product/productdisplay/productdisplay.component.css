@@ -1,0 +1,20 @@
+
+.assured{
+    background-color:rgba(23, 91, 218, 0.603);
+    font-size:13px;
+    font-style: italic;
+    font-family:Arial;
+    font-weight:bold;
+}
+.bi-star-fill{
+    font-size:14px;
+    color:gold;
+}
+.card{
+    box-shadow:1px 1px 1px gray;
+}
+
+.card-body:hover{
+    transform:scale(1.1);
+    transition:1s;
+}
