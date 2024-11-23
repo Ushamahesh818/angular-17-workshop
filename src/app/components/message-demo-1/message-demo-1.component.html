@@ -1,0 +1,9 @@
+<h2 class="text-center">Message Receiver</h2>
+
+<div class="container-fluid">
+    <ol>
+        <li *ngFor="let msg of msgFromService">
+            {{msg.text}}
+        </li>
+    </ol>
+</div>

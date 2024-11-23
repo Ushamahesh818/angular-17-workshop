@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <h1>Structure Directives </h1>
+    <div>
+   <h3 class="text-primary">*ngIf Demo</h3>
+    <h3 *ngIf="n%2 === 0">{{n}} is even number</h3>
+    <h3 *ngIf="n%2 !== 0">{{n}} is odd number</h3>
+</div>
+<hr>
+<div>
+    <h4 class="text-primary">*ngif else demo</h4>
+    <div *ngIf="n%2 === 0;else elseBlock">
+        {{n}} is even number
+    </div>
+    <ng-template #elseBlock >
+        {{n}} is odd number
+    </ng-template>
+</div>
+<hr>
+<div>
+    <h3 class="text-primary">*ngSwitch Demo</h3>
+    <h1 [ngSwitch]="x">
+    <p *ngSwitchCase="1">Monday</p>
+    <p *ngSwitchCase="2">Tuesday</p>
+    <p *ngSwitchCase="3">Wednesday</p>
+    <p *ngSwitchCase="4">Thursday</p>
+    <p *ngSwitchDefault>Enter valid day</p>
+    </h1>
+</div>
+<hr>
+<div>
+    <h3 class="text-primary">*ngFor Demo</h3>
+    <ul>
+        <li *ngFor="let car of cars">
+        {{car}}
+        </li>
+    </ul>
+    <select>
+        <option *ngFor="let car of cars">{{car}}</option>
+    </select>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>gender</th>
+                <th>name</th>
+                <th>sal</th>
+                <th>index</th>
+                <th>isFirst</th>
+                <th>isLast</th>
+                <th>isEven</th>
+                <th>isOdd</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let emp of employees;let i=index;let f=first;let l=last;let e=even;let o=odd; trackBy: employeeTrackBy" [ngStyle]="{'background-color':e?'green':'red'}">
+            <td>{{emp.eId}}</td>
+            <td>{{emp.gender}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.sal}}</td>
+            <td>{{i}}</td>
+            <td>{{f}}</td>
+            <td>{{l}}</td>
+            <td>{{e}}</td>
+            <td>{{o}}</td>
+        </tr>
+    </tbody>
+    </table>
+    <button class="btn btn-primary" (click)="AddEmployee()">Add Employee</button>
+</div>
+
+
+
+</div>

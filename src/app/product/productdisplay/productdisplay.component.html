@@ -8,6 +8,7 @@
     </li>
 </ol> -->
 <main class="d-flex justify-content-evenly flex-wrap ">
+    
 <div class="card p-4 mb-3" *ngFor="let product of products" style="width:300px;" >
     <img src="{{product.image}}" class="card-img-top" style="width:100%;height:250px;">
     <div class="card-body mt-3 mb-2" style="height:170px">
@@ -16,6 +17,10 @@
         <div><img src="../../../assets/images/flipkart-icon.jpeg" width="20px" height="20px"><span class="assured">Assured</span></div>
         <div class="card-text">{{product.rating.rate}}<span class="bi bi-star-fill"></span></div>
         <div class="card-text">{{product.category}}</div>
+      
+    </div>
+    <div class="card-footer bg-white text-center">
+        <button class="btn btn-warning w-100" [routerLink]="['/productDetails',product.id]">View Product</button>
     </div>
 </div>
 </main>

@@ -1,0 +1,17 @@
+
+<div class="container-fluid">
+    <h2>User List</h2>
+    <div class="row">
+        <div class="col-3"  *ngFor="let user of userList">
+            <div class="card mt-3 border border-1" style="width:300px">
+                <img src="../../../assets/images/bird.jpg" class="card-img-top" style="width:100%">
+                <div class="card-body text-center">
+                    <div>{{user.name}}</div>
+                    <div>{{user.email}}</div>
+                    <div>{{user.phone}}</div>
+                </div>
+                <div><button class="btn btn-warning w-100" [routerLink]="['/userDetail']" [queryParams]="{name:user.name,email:user.email,phone:user.phone}">View Details</button></div>
+            </div>
+        </div>
+    </div>
+</div>

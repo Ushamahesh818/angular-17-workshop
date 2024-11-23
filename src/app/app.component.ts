@@ -14,13 +14,23 @@ import { FormsModule } from '@angular/forms';
 import { ParentComponent } from './commumnication/parent/parent.component';
 import { MathComponent } from './components/math/math.component';
 import { EmployeeCRUDComponent } from './components/employee-crud/employee-crud.component';
+import { ObservableDemo1Component } from './components/observable-demo1/observable-demo1.component';
+import { ObservableDemo2Component } from './components/observable-demo2/observable-demo2.component';
+import { SubjectDemo1Component } from './components/subject-demo-1/subject-demo-1.component';
+import { MessageDemo1Component } from './components/message-demo-1/message-demo-1.component';
+import { MessageDemo2Component } from './components/message-demo-2/message-demo-2.component';
+import { RegistrationTemplateDrivenComponent } from './forms/registration-template-driven/registration-template-driven.component';
+import { Databinding1Component } from './components/databinding1/databinding1.component';
+import { DirectivesComponent } from './components/directives/directives.component';
+import { UserslistComponent } from './users/userslist/userslist.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, NavbarComponent, HeaderComponent, CarouselComponent, 
     FooterComponent, DatabindingComponent,ProductdisplayComponent,ProductListPaginationComponent
-    ,FormsModule,CommonModule,PrefixPipe,OrdinalPipe,ParentComponent,MathComponent,EmployeeCRUDComponent],
+    ,FormsModule,CommonModule,PrefixPipe,OrdinalPipe,ParentComponent,MathComponent,EmployeeCRUDComponent,ObservableDemo1Component,ObservableDemo2Component,SubjectDemo1Component,
+  MessageDemo1Component,MessageDemo2Component,RegistrationTemplateDrivenComponent,Databinding1Component,DirectivesComponent,UserslistComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

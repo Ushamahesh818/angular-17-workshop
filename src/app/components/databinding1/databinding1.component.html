@@ -1,0 +1,65 @@
+<div>
+<h2 class="text-primary">Interpolation Databinding</h2>
+<h6>Welcome {{name}} </h6> 
+<input type="text" value={{name}}><br>
+<img src={{img_src}} width="80px" height="80px">
+</div>
+
+<div>
+    <h2 class="text-primary">Property Databinding</h2>
+    <input type="text" [value]="name" ><br>
+    <input type="text" bind-value="name" ><br>
+    <img [src]="img_src" width="80px" height="80px">
+
+    <h4 class="text-bg-danger">Difference between Interpolation and Property Binding</h4>
+    <button disabled="{{flag}}" class="mx-2">Interpolation</button> 
+    <button [disabled]="flag"  class="mx-2">Property</button> 
+    <button bind-disabled="flag">Property2</button>
+</div>
+
+
+<div>
+    <h2 class="text-primary">Event Binding</h2>
+    <button [disabled]="false" (click)="toggleButton()">Event Binding 1</button>
+    <button bind-disabled="false" on-click="toggleButton()">Event Binding 2</button>
+</div>
+
+<div>
+    <h2 class="text-primary">2-way Data binding</h2>
+    1 way Property Binding<input type="text" [value]="name" ><br>
+    1 way Interpolation Binding<input type="text" value="{{name}}" ><br>
+    2 way ngModel Binding<input type="text" [(ngModel)]="name" >
+
+</div>
+<div>
+    <h2 class="text-success Assignment">Button Toggle</h2>
+    <h1 [hidden]="flag">Hide this text</h1>
+    <button (click)="toggle()">{{flag?'Show':'Hide'}}</button>
+</div>
+<div>
+    <h2>Show or Hide Password</h2>
+    <input [type]="flag?'text':'password'"><br>
+    <input type="checkbox" (change)="flag=!flag">{{flag?'Hide':'Show'}} Password
+</div>
+<div>
+    <h2 class="text-danger">Print remaining chars in textarea</h2>
+    <textarea maxlength="100" [(ngModel)]="msg">
+
+    </textarea>
+    Remaining Chars:{{100-msg.length}}
+</div>
+<div>
+    State:<select [(ngModel)]="state">
+        <option>Select State</option>
+        <option>Kerala</option>
+        <option>Karnataka</option>
+    </select>
+
+    Selected state:{{state}}
+</div>
+<div>
+    <h2>Template Reference Variable</h2>
+    <input #box1>
+    <input ref-box2><br>
+    <button (click)="addition(box1.value,box2.value)">Add</button>
+</div>

@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <form #contactForm="ngForm" (ngSubmit)="OnSubmit(contactForm)" novalidate>
+    <div>
+        First Name:<input type="text" #fName="ngModel" name="firstname" required  [(ngModel)]="contactObj.firstname">
+        <div *ngIf="fName.hasError('required') && fName.dirty" class="text-danger">
+            Firstname is required
+        </div>
+    </div>
+    <div>
+        Last Name:<input type="text"  name="lastname" [(ngModel)]="contactObj.lastname">
+    </div>
+    <div>
+        <label for="email">Email </label>
+        <input type="text" name="email" [(ngModel)]="contactObj.email">
+    </div>
+    <div>
+        <label for="gender">Geneder</label>
+        <input type="radio" value="male"  name="gender" [(ngModel)]="contactObj.gender"> Male
+        <input type="radio" value="female" name="gender" [(ngModel)]="contactObj.gender"> Female
+    </div>
+    <div>
+        <label for="isMarried">Married</label>
+    <input type="checkbox"  name="isMarried" [(ngModel)]="contactObj.isMarried">
+    </div>
+    <div>
+        <label for="country">country </label>
+        <select name="country"  [(ngModel)]="contactObj.country">
+          <option selected="" value=""></option>
+          <option [ngValue]="c.id" *ngFor="let c of countryList">
+            {{c.name}}
+          </option>
+        </select>
+    </div>
+    <div ngModelGroup="address">
+            <div>
+                <label for="city">City</label>
+                <input type="text" name="city" [(ngModel)]="contactObj.address.city">
+            </div>
+            <div>
+                <label for="street">Street</label>
+                <input type="text" name="street" [(ngModel)]="contactObj.address.street">
+            </div>
+            <div>
+                <label for="pincode">Pin Code</label>
+                <input type="text" name="pincode" [(ngModel)]="contactObj.address.pincode">
+            </div>
+    </div>
+    <div>
+        <button>Submit</button>
+        <button type="reset" >Reset</button>
+        <button type="button" (click)="setDefaults()">Set Defaults</button>
+    </div>
+</form>
+</div>
+
+<pre>Value : {{contactForm.value | json }} </pre>
+<pre>{{fName.value}}</pre>
+<pre>Valid : {{contactForm.valid}} </pre>
+<pre>Touched : {{contactForm.touched  }} </pre>
+<pre>Submitted : {{contactForm.submitted  }} </pre>

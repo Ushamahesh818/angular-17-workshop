@@ -1,0 +1,5 @@
+<h3 class="text-center">Message Sender</h3>
+
+<input type="text" size="4" class="form-control mb-3" #msgText>
+<button class="btn btn-primary me-2" (click)="sendMyMessage(msgText.value)">Send Message</button>
+<button class="btn btn-outline-danger" (click)="clearMsgs()">Clear All Messages</button>
